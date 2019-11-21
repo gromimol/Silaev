@@ -1,1 +1,21 @@
-/*Header*/ 
+/*Header*/
+.header{
+	padding: 15px 0;
+} 
+.menu{
+	display: flex;
+	align-items: center;
+	li{
+		&:not(:last-child){
+			margin-right: 32px;
+		}
+		a{
+			display: block;
+			line-height: 1.1875;
+			font-size: 1em;
+			&:hover{
+				color: var(--blue);
+			}
+		}
+	}
+}
