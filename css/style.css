@@ -150,6 +150,9 @@ a {
   margin: 0 auto;
   padding: 0 40px; }
 
+.footer .menu li a:hover {
+  color: #C7C7C7; }
+
 .flex {
   display: -moz-flex;
   display: -ms-flex;
@@ -367,6 +370,18 @@ b, strong {
     border: 1px solid #9dcdf3;
     color: var(--blue); }
     .feature__item .ico svg {
+      height: 45px; }
+    .feature__item .ico .diagram {
+      height: 40px;
+      -webkit-transform: translateX(3px);
+              transform: translateX(3px); }
+    .feature__item .ico .flower {
+      height: 48px; }
+    .feature__item .ico .group {
+      height: 54px;
+      -webkit-transform: translateY(-2px);
+              transform: translateY(-2px); }
+    .feature__item .ico .planet {
       height: 50px; }
 
 .feature__descr {
@@ -419,12 +434,9 @@ b, strong {
       background: linear-gradient(90deg, #25A2FB 0%, #0087E8 100%);
       -webkit-transition: all .3s;
       transition: all .3s; }
-    .btn--blue:hover {
-      -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-              box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); }
-      .btn--blue:hover::after {
-        -webkit-transform: translateX(0);
-                transform: translateX(0); }
+    .btn--blue:hover::after {
+      -webkit-transform: translateX(0);
+              transform: translateX(0); }
   .btn--border {
     border: 1px solid var(--blue);
     color: var(--blue);
@@ -488,11 +500,22 @@ b, strong {
       width: 100%;
       height: 100%; }
   .question-link .link-text {
-    text-decoration: underline; }
+    display: inline-block;
+    position: relative; }
+    .question-link .link-text::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #25A2FB;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      -webkit-transition: all .3s;
+      transition: all .3s; }
   .question-link:hover {
     color: #444; }
-    .question-link:hover .link-text {
-      text-decoration: none; }
+    .question-link:hover .link-text::after {
+      opacity: 0; }
 
 .contact-data {
   border: 1px solid #C7C7C7;
@@ -813,11 +836,17 @@ b, strong {
       height: 100%; }
 
   .main-block {
-    height: 420px; } }
+    height: 420px; }
+
+  .question-link .link-text::after {
+    top: 90%; }
+
+  .h1 {
+    font-size: 50px; } }
 /*767*/
 @media (max-width: 640px) {
   .h1 {
-    font-size: 38px; }
+    font-size: 44px; }
 
   .main-block {
     padding-top: 35px; }
@@ -838,23 +867,24 @@ b, strong {
     padding: 0 15px; }
 
   .main-block__img {
-    position: relative;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: flex-end;
-    margin-top: -25%; }
+            justify-content: flex-end; }
     .main-block__img img {
       width: auto;
-      height: 100%;
+      height: 370px;
       -o-object-fit: contain;
-         object-fit: contain; }
+         object-fit: contain;
+      position: absolute;
+      bottom: 0;
+      right: 0; }
 
   .main-list li {
-    font-size: 14px;
+    font-size: 18px;
     padding-left: 10px; }
     .main-list li::before {
       width: 3px;
@@ -932,6 +962,8 @@ b, strong {
 
   .contact-text {
     line-height: 1.5; }
+    .contact-text b {
+      padding-right: 20px; }
 
   .question-link {
     padding-left: 0; }
@@ -959,8 +991,40 @@ b, strong {
   .copyright {
     margin-top: 15px; } }
 /*640*/
+@media (max-width: 540px) {
+  .main-block {
+    height: 340px; }
+
+  .main-block__img {
+    height: 300px;
+    right: -20px; }
+    .main-block__img img {
+      height: 100%; } }
+@media (max-width: 480px) {
+  .main-block__img {
+    height: 250px;
+    right: -10px; } }
+@media (max-width: 440px) {
+  .main-block__img {
+    height: 280px;
+    right: -10px; }
+
+  .main-block .h1 {
+    font-size: 33px; }
+
+  .main-list li {
+    font-size: 14px; } }
+@media (max-width: 440px) {
+  .main-block__img {
+    height: 280px;
+    right: -10px; } }
+@media (max-width: 400px) {
+  .main-block__img {
+    height: 260px;
+    right: -30px; } }
 @media (max-width: 360px) {
   .main-block__img {
-    margin-top: -20%; } }
+    height: 230px;
+    right: -25px; } }
 
 /*# sourceMappingURL=style.css.map */
