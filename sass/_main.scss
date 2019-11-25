@@ -371,7 +371,6 @@ b,strong{
 		&:hover{
 			background-color: var(--blue);
 			color: #fff;
-			box-shadow: 0 6px 10px rgba(#000, .3);
 		}
 		.btn-ico{
 			transform: rotate(-90deg);
@@ -496,15 +495,28 @@ b,strong{
 	}
 	.link-text{
 		font-size: 20px;
-		text-decoration: underline;
 		font-weight: 500;
+		display: inline-block;
+		position: relative;
 		color: #000;
 		transition: all .3s;
+		&::after{
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: #000;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			transition: all .3s;
+		}
 	}
 	&:hover{
 		.link-text{
 			color: var(--blue);
-			text-decoration: none;
+			&::after{
+				opacity: 0;
+			}
 		}
 	}
 }
